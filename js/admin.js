@@ -409,6 +409,37 @@ function changePassword() {
   toast('تم تغيير كلمة المرور', 'ok');
 }
 
+/* ---------- نافذة النشر ---------- */
+function openPublish() {
+  document.getElementById('publishJson').value = DB.getDataJson();
+  document.getElementById('publishBackdrop').classList.add('open');
+}
+function closePublish() {
+  document.getElementById('publishBackdrop').classList.remove('open');
+}
+function publishDownload() {
+  DB.downloadDataJson();
+  toast('تم تنزيل menu-data.json — ارفعه على GitHub', 'ok');
+}
+function publishCopy() {
+  const ta = document.getElementById('publishJson');
+  ta.select();
+  ta.setSelectionRange(0, ta.value.length);
+  const done = () => toast('تم نسخ المحتوى — الصقه على GitHub ثم Commit', 'ok');
+  const fallback = () => {
+    try { document.execCommand('copy'); done(); }
+    catch (e) { toast('تعذر النسخ — انسخ يدوياً بـ Ctrl+C', 'err'); }
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(ta.value).then(done, fallback);
+  } else {
+    fallback();
+  }
+}
+document.getElementById('publishBackdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('publishBackdrop')) closePublish();
+});
+
 /* ---------- Excel ---------- */
 document.getElementById('excelFileInput').addEventListener('change', e => {
   const f = e.target.files[0];

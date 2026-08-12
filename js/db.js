@@ -304,10 +304,15 @@ const DB = (() => {
     XLSX.writeFile(wb, 'menu-template.xlsx');
   }
 
+  /* محتوى ملف البيانات المنشور menu-data.json */
+  function getDataJson() {
+    const d = load();
+    return JSON.stringify({ settings: d.settings, categories: d.categories, items: d.items }, null, 2);
+  }
+
   /* تنزيل ملف البيانات المنشور menu-data.json (لرفعه على GitHub) */
   function downloadDataJson() {
-    const d = load();
-    const json = JSON.stringify({ settings: d.settings, categories: d.categories, items: d.items }, null, 2);
+    const json = getDataJson();
     const blob = new Blob([json], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -338,7 +343,7 @@ const DB = (() => {
     getCategories, addCategory, updateCategory, deleteCategory, moveCategory,
     getItems, addItem, updateItem, deleteItem, moveItem,
     getCategoryName,
-    importExcel, exportExcel, downloadTemplate, downloadDataJson,
+    importExcel, exportExcel, downloadTemplate, downloadDataJson, getDataJson,
     fetchPublished, usePublic,
     getAdmin, setPassword, isLoggedIn, login, logout,
     uid,

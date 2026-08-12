@@ -221,7 +221,7 @@
             </div>
             <h3>نشر المنيو للجميع</h3>
             <p>يُنشئ ملف البيانات المنشور (menu-data.json) بكل تعديلاتك الحالية لرفعه على GitHub فيظهر للجميع.</p>
-            <button class="btn btn-primary btn-block" onclick="DB.downloadDataJson();toast('تم تنزيل menu-data.json — ارفعه على GitHub','ok')">تنزيل ملف البيانات</button>
+            <button class="btn btn-primary btn-block" onclick="openPublish()">نشر المنيو للجميع</button>
           </div>
         </div>
         <div class="excel-steps">
@@ -368,6 +368,30 @@
       <div class="modal-foot">
         <button class="btn btn-danger" id="confirmOk">نعم، احذف</button>
         <button class="btn btn-ghost" onclick="closeConfirm()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة النشر -->
+  <div class="modal-backdrop" id="publishBackdrop">
+    <div class="modal" style="width:min(760px,100%)">
+      <div class="modal-head">
+        <h3>نشر المنيو للجميع</h3>
+        <button class="x" onclick="closePublish()">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="color:var(--muted);font-size:.88rem;margin-bottom:12px">
+          هذا هو المنيو المنشور لموقعك. ارفعه على GitHub ليظهر للجميع خلال دقيقة تقريباً:
+          <b>Add file → Upload files → Commit changes</b>.
+          إذا لم يعمل التنزيل، اضغط <b>نسخ المحتوى</b> ثم على GitHub:
+          <b>Add file → Create new file</b>، الصق المحتوى وسمِّ الملف <code style="direction:ltr;display:inline-block;background:#f1f3f7;border-radius:6px;padding:1px 8px">menu-data.json</code> ثم Commit.
+        </p>
+        <textarea id="publishJson" readonly wrap="off" style="width:100%;min-height:200px;direction:ltr;text-align:left;font-family:Consolas,monospace;font-size:.75rem;line-height:1.5;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#fafbfc;outline:none;resize:vertical"></textarea>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary" onclick="publishDownload()">تنزيل الملف</button>
+        <button class="btn btn-ghost" onclick="publishCopy()">نسخ المحتوى</button>
+        <button class="btn btn-ghost" onclick="closePublish()">إغلاق</button>
       </div>
     </div>
   </div>
