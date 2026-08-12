@@ -1,8 +1,8 @@
 /* منطق صفحة المنيو */
 (function () {
-  const s = DB.getSettings();
-  const currency = s.currency || 'ر.س';
-  const logoSrc = s.logo || '';
+  let s = {};
+  let currency = 'ر.س';
+  let logoSrc = '';
 
   function setLogo(imgEl) {
     imgEl.src = logoSrc;
@@ -160,7 +160,19 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  /* ---------- التشغيل ---------- */
-  applySettings();
-  renderMenu();
+  /* ---------- التشغيل: تحميل البيانات المنشورة أولاً ---------- */
+  function init() {
+    s = DB.getSettings();
+    currency = s.currency || 'ر.س';
+    logoSrc = s.logo || '';
+    applySettings();
+    renderMenu();
+  }
+
+  /* الزائر يقرأ الملف المنشور menu-data.json من الخادم
+     (وعند الفتح المحلي يعود لبيانات المتصفح) */
+  DB.fetchPublished(pub => {
+    DB.usePublic(pub);
+    init();
+  });
 })();

@@ -186,6 +186,9 @@
           <h1>ملف Excel</h1>
           <p>استخدم ملف Excel كقاعدة بيانات: استورد بياناتك أو صدّرها أو حمّل نموذجاً جاهزاً</p>
         </div>
+        <div class="panel" style="margin-bottom:18px;background:var(--primary-soft);border-color:var(--primary)">
+          <b>ملاحظة مهمة:</b> التعديلات التي تقوم بها هنا تُحفظ في متصفحك فقط (مسودة). حتى يراها الزوار، اضغط <b>"نشر المنيو للجميع"</b> ثم ارفع ملف <code style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 8px;direction:ltr;display:inline-block">menu-data.json</code> على GitHub كشرح بالأسفل.
+        </div>
         <div class="excel-cards">
           <div class="excel-card">
             <div class="ic">
@@ -212,15 +215,23 @@
             <p>ملف تجريبي يوضح الأعمدة المطلوبة لتعبئة بياناتك ثم استيرادها.</p>
             <button class="btn btn-ghost btn-block" onclick="DB.downloadTemplate();toast('تم تحميل النموذج','ok')">تحميل النموذج</button>
           </div>
+          <div class="excel-card">
+            <div class="ic" style="background:var(--primary-soft);color:var(--primary)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            </div>
+            <h3>نشر المنيو للجميع</h3>
+            <p>يُنشئ ملف البيانات المنشور (menu-data.json) بكل تعديلاتك الحالية لرفعه على GitHub فيظهر للجميع.</p>
+            <button class="btn btn-primary btn-block" onclick="DB.downloadDataJson();toast('تم تنزيل menu-data.json — ارفعه على GitHub','ok')">تنزيل ملف البيانات</button>
+          </div>
         </div>
         <div class="excel-steps">
-          <h3>طريقة استخدام ملف Excel</h3>
+          <h3>طريقة استخدام ملف Excel ونشر المنيو</h3>
           <ol>
-            <li>حمّل <b>النموذج الجاهز</b> من الأعلى.</li>
-            <li>افتحه في Excel وعبّئ الأعمدة: <code>الاسم</code> <code>الوصف</code> <code>السعر</code> <code>القسم</code> <code>الصورة (رابط)</code> <code>متاح (نعم/لا)</code></li>
-            <li>احفظ الملف ثم اضغط <b>استيراد من Excel</b> واختر الملف.</li>
-            <li>سيتم إنشاء الأقسام تلقائياً من عمود "القسم" واستبدال المنيو الحالي بالكامل.</li>
-            <li>بعد الاستيراد، افتح <b>عرض المنيو</b> للتأكد من النتيجة.</li>
+            <li>حمّل <b>النموذج الجاهز</b> وعبّئ الأعمدة: <code>الاسم</code> <code>الوصف</code> <code>السعر</code> <code>القسم</code> <code>الصورة (رابط)</code> <code>متاح (نعم/لا)</code></li>
+            <li>اضغط <b>استيراد من Excel</b> واختر الملف — ستظهر البيانات لك فوراً (مسودة).</li>
+            <li>اضغط <b>نشر المنيو للجميع</b> لتنزيل ملف <code>menu-data.json</code>.</li>
+            <li>افتح مستودعك على GitHub: <b>Add file → Upload files</b> وارفع الملف المحدّث ثم <b>Commit changes</b>.</li>
+            <li>خلال ~دقيقة يعيد الموقع النشر ويرى الجميع المنيو الجديد.</li>
           </ol>
         </div>
       </section>

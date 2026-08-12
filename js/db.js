@@ -2,6 +2,7 @@
 const DB = (() => {
   const DATA_KEY = 'rm_data_v1';
   const ADMIN_KEY = 'rm_admin_v1';
+  const PUBLIC_KEY = 'rm_pub_v1';
 
   const DEFAULT_SETTINGS = {
     name: 'مطعم الذواقة',
@@ -39,8 +40,42 @@ const DB = (() => {
   });
 
   let cache = null;
+  let publicData = null;
+
+  function normalizePublished(d) {
+    return {
+      settings: Object.assign({}, DEFAULT_SETTINGS, (d && d.settings) || {}),
+      categories: (d && Array.isArray(d.categories)) ? d.categories : [],
+      items: (d && Array.isArray(d.items)) ? d.items : [],
+    };
+  }
+
+  /* جلب البيانات المنشورة (للزوار): تحميل menu-data.json من الخادم
+     مع تخزين مؤقت في المتصفح، والرجوع إليه إذا فشل الاتصال */
+  function fetchPublished(cb) {
+    if (location.protocol === 'file:') { cb(cachedPublished()); return; }
+    fetch('menu-data.json?v=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
+      .then(data => {
+        const norm = normalizePublished(data);
+        if (!norm.items.length && !norm.categories.length) throw new Error('empty');
+        try { localStorage.setItem(PUBLIC_KEY, JSON.stringify(norm)); } catch (e) {}
+        cb(norm);
+      })
+      .catch(() => cb(cachedPublished()));
+  }
+
+  function cachedPublished() {
+    try {
+      const raw = localStorage.getItem(PUBLIC_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  function usePublic(data) { publicData = data; }
 
   function load() {
+    if (publicData) return publicData;
     if (cache) return cache;
     try {
       const raw = localStorage.getItem(DATA_KEY);
@@ -62,6 +97,7 @@ const DB = (() => {
   }
 
   function save() {
+    if (publicData) return;
     localStorage.setItem(DATA_KEY, JSON.stringify(load()));
   }
 
@@ -268,6 +304,19 @@ const DB = (() => {
     XLSX.writeFile(wb, 'menu-template.xlsx');
   }
 
+  /* تنزيل ملف البيانات المنشور menu-data.json (لرفعه على GitHub) */
+  function downloadDataJson() {
+    const d = load();
+    const json = JSON.stringify({ settings: d.settings, categories: d.categories, items: d.items }, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'menu-data.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+  }
+
   /* ---------- الإدارة ---------- */
   function getAdmin() {
     try {
@@ -289,7 +338,8 @@ const DB = (() => {
     getCategories, addCategory, updateCategory, deleteCategory, moveCategory,
     getItems, addItem, updateItem, deleteItem, moveItem,
     getCategoryName,
-    importExcel, exportExcel, downloadTemplate,
+    importExcel, exportExcel, downloadTemplate, downloadDataJson,
+    fetchPublished, usePublic,
     getAdmin, setPassword, isLoggedIn, login, logout,
     uid,
   };
