@@ -1,134 +1,775 @@
 {
   "settings": {
-    "name": "مطعم الذواقة",
-    "slogan": "أشهى الأطباق بلمسة احترافية",
-    "phone": "+966 5X XXX XXXX",
-    "address": "الرياض، المملكة العربية السعودية",
-    "currency": "ر.س",
-    "logo": ""
+    "name": "ســـــــــــــــــــــــــــــكون",
+    "slogan": "",
+    "phone": "",
+    "address": "",
+    "currency": "ل.س",
+    "logo": "",
+    "showNotAvailable": true
   },
   "categories": [
     {
-      "id": "c1",
-      "name": "مقبلات",
+      "id": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيلات",
       "sort": 1
     },
     {
-      "id": "c2",
-      "name": "أطباق رئيسية",
+      "id": "id_msqpb8zdvlptk4",
+      "name": "الفروزن",
       "sort": 2
     },
     {
-      "id": "c3",
-      "name": "مشروبات",
+      "id": "id_msqpb8zd0ueeyf",
+      "name": "قسم الفريش",
       "sort": 3
     },
     {
-      "id": "c4",
-      "name": "حلويات",
+      "id": "id_msqpb8zd3nv454",
+      "name": "ميلك شيك",
       "sort": 4
+    },
+    {
+      "id": "id_msqpb8zdv766p0",
+      "name": "مشروبات ساخنه",
+      "sort": 5
+    },
+    {
+      "id": "id_msqpb8zdz0wps2",
+      "name": "موهيتو",
+      "sort": 6
+    },
+    {
+      "id": "id_msqpb8zdpc7ywp",
+      "name": "سلطات الفواكه",
+      "sort": 7
+    },
+    {
+      "id": "id_msqpb8zd9lkp27",
+      "name": "الكافيه",
+      "sort": 8
     }
   ],
   "items": [
     {
-      "id": "i1",
-      "categoryId": "c1",
-      "name": "حمص بالطحينة",
-      "desc": "حمص كريمي بزيت الزيتون والصنوبر المحمص",
-      "price": 18,
-      "image": "",
+      "id": "id_msqpb8zdpa3bt1",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل موز وحليب",
+      "desc": "وصف الطبق هنا",
+      "price": 250,
+      "image": "https://example.com/image.jpg",
       "available": true,
       "sort": 1
     },
     {
-      "id": "i2",
-      "categoryId": "c1",
-      "name": "متبل باذنجان",
-      "desc": "باذنجان مشوي مع الطحينة والليمون",
-      "price": 16,
+      "id": "id_msqpb8zd08tneq",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل موز وحليب وشوكولا",
+      "desc": "",
+      "price": 250,
       "image": "",
       "available": true,
       "sort": 2
     },
     {
-      "id": "i3",
-      "categoryId": "c1",
-      "name": "تبولة",
-      "desc": "بقدونس طازج مع البرغل والطماطم وعصير الليمون",
-      "price": 14,
+      "id": "id_msqpb8zdshvluf",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل موز وحليب وفريز",
+      "desc": "",
+      "price": 250,
       "image": "",
       "available": true,
       "sort": 3
     },
     {
-      "id": "i4",
-      "categoryId": "c2",
-      "name": "كباب لحم مشوي",
-      "desc": "لحم غنم طازج مشوي على الفحم مع الأرز البخاري",
-      "price": 55,
+      "id": "id_msqpb8zd3fbs30",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل فواكه",
+      "desc": "",
+      "price": 300,
       "image": "",
       "available": true,
-      "sort": 1
+      "sort": 4
     },
     {
-      "id": "i5",
-      "categoryId": "c2",
-      "name": "دجاج مشوي",
-      "desc": "نصف دجاجة متبلة بالأعشاب مع بطاطس مقلية",
-      "price": 42,
+      "id": "id_msqpb8zdth7aa6",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل مو وحليب وافوكاده",
+      "desc": "",
+      "price": 450,
       "image": "",
       "available": true,
-      "sort": 2
+      "sort": 5
     },
     {
-      "id": "i6",
-      "categoryId": "c2",
-      "name": "مندي لحم",
-      "desc": "لحم ضأن مع أرز بسمتي بالبهارات الجنوبية",
-      "price": 65,
+      "id": "id_msqpb8zds85cek",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "كوكتيل الامبراطور",
+      "desc": "",
+      "price": 450,
       "image": "",
       "available": true,
-      "sort": 3
+      "sort": 6
     },
     {
-      "id": "i7",
-      "categoryId": "c3",
-      "name": "عصير برتقال طازج",
-      "desc": "برتقال طبيعي 100% بدون سكر مضاف",
-      "price": 12,
+      "id": "id_msqpb8zd1wrg0v",
+      "categoryId": "id_msqpb8zdmsuqsw",
+      "name": "امبراطور تركي",
+      "desc": "",
+      "price": 500,
       "image": "",
       "available": true,
-      "sort": 1
+      "sort": 7
     },
     {
-      "id": "i8",
-      "categoryId": "c3",
-      "name": "موهيتو نعناع",
-      "desc": "نعناع طازج مع الليمون والصودا",
-      "price": 15,
+      "id": "id_msqpb8zdifwd1a",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "باشن فروت",
+      "desc": "",
+      "price": 300,
       "image": "",
       "available": true,
-      "sort": 2
+      "sort": 8
     },
     {
-      "id": "i9",
-      "categoryId": "c4",
-      "name": "كنافة نابلسية",
-      "desc": "كنافة بالجبن مع القطر والفستق الحلبي",
-      "price": 22,
+      "id": "id_msqpb8zd0bbd2p",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "فريز",
+      "desc": "",
+      "price": 300,
       "image": "",
       "available": true,
-      "sort": 1
+      "sort": 9
     },
     {
-      "id": "i10",
-      "categoryId": "c4",
-      "name": "أم علي",
-      "desc": "حلويات شرقية بالحليب والمكسرات",
-      "price": 20,
+      "id": "id_msqpb8zdgxu4d6",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "رمان",
+      "desc": "",
+      "price": 300,
       "image": "",
       "available": true,
-      "sort": 2
+      "sort": 10
+    },
+    {
+      "id": "id_msqpb8zdq63e2e",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "توت اسود",
+      "desc": "",
+      "price": 300,
+      "image": "",
+      "available": true,
+      "sort": 11
+    },
+    {
+      "id": "id_msqpb8zd0dvobu",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "اناناس",
+      "desc": "",
+      "price": 300,
+      "image": "",
+      "available": true,
+      "sort": 12
+    },
+    {
+      "id": "id_msqpb8zdehybml",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "كيوي",
+      "desc": "",
+      "price": 300,
+      "image": "",
+      "available": true,
+      "sort": 13
+    },
+    {
+      "id": "id_msqpb8zdnn1h3g",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "بطيخ",
+      "desc": "",
+      "price": 300,
+      "image": "",
+      "available": true,
+      "sort": 14
+    },
+    {
+      "id": "id_msqpb8zd4yspoz",
+      "categoryId": "id_msqpb8zdvlptk4",
+      "name": "دراق",
+      "desc": "",
+      "price": 300,
+      "image": "",
+      "available": true,
+      "sort": 15
+    },
+    {
+      "id": "id_msqpb8zd38x5ul",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "برتقال فريش",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 16
+    },
+    {
+      "id": "id_msqpb8zdnqoa3t",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "جبس فريش",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 17
+    },
+    {
+      "id": "id_msqpb8zdalzmwz",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "زينا سبييان منعش",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 18
+    },
+    {
+      "id": "id_msqpb8zdogltb1",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "قولايم",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 19
+    },
+    {
+      "id": "id_msqpb8zd57qx2f",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "عصير بولو",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 20
+    },
+    {
+      "id": "id_msqpb8zdyr3hfx",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "ليمون فرش",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 21
+    },
+    {
+      "id": "id_msqpb8zdh6g1zz",
+      "categoryId": "id_msqpb8zd0ueeyf",
+      "name": "قولبيري",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 22
+    },
+    {
+      "id": "id_msqpb8zdmn768v",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "فريز",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 23
+    },
+    {
+      "id": "id_msqpb8zdsyhpkj",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "مانكو",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 24
+    },
+    {
+      "id": "id_msqpb8zdesa8gc",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "تراميسو",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 25
+    },
+    {
+      "id": "id_msqpb8zdrhywez",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "بطيخ",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 26
+    },
+    {
+      "id": "id_msqpb8zdchz1sz",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "اوريو",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 27
+    },
+    {
+      "id": "id_msqpb8zdu0qqdu",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "فريز",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 28
+    },
+    {
+      "id": "id_msqpb8zdjan8kv",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "رمان",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 29
+    },
+    {
+      "id": "id_msqpb8zdlmg8vl",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "توت اسود",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 30
+    },
+    {
+      "id": "id_msqpb8zd2x2nym",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "فانيلا باشن فروت",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 31
+    },
+    {
+      "id": "id_msqpb8zdil66io",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "شوكولا",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 32
+    },
+    {
+      "id": "id_msqpb8zdlvpvit",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "كاراميل",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 33
+    },
+    {
+      "id": "id_msqpb8zd77ltk7",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "موز",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 34
+    },
+    {
+      "id": "id_msqpb8zd1b3q34",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "كيوي",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 35
+    },
+    {
+      "id": "id_msqpb8zditbdja",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "اناناس",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 36
+    },
+    {
+      "id": "id_msqpb8zdfw53yz",
+      "categoryId": "id_msqpb8zd3nv454",
+      "name": "دراق",
+      "desc": "",
+      "price": 270,
+      "image": "",
+      "available": true,
+      "sort": 37
+    },
+    {
+      "id": "id_msqpb8zdpn00yd",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "كابتشينو",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 38
+    },
+    {
+      "id": "id_msqpb8zd0lgp2k",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "1+3",
+      "desc": "",
+      "price": 80,
+      "image": "",
+      "available": true,
+      "sort": 39
+    },
+    {
+      "id": "id_msqpb8zdfzhi4o",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "قهوة تركية",
+      "desc": "",
+      "price": 150,
+      "image": "",
+      "available": true,
+      "sort": 40
+    },
+    {
+      "id": "id_msqpb8zd3kn7ku",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "استيلو",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 41
+    },
+    {
+      "id": "id_msqpb8zdryj6o9",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "هت شوكليت",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 42
+    },
+    {
+      "id": "id_msqpb8zddtaa3a",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "هوت شوكليت بحليب",
+      "desc": "",
+      "price": 150,
+      "image": "",
+      "available": true,
+      "sort": 43
+    },
+    {
+      "id": "id_msqpb8zdlzq0ct",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "اكس بريسو",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 44
+    },
+    {
+      "id": "id_msqpb8zd7wbigm",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "قهوة عربية",
+      "desc": "",
+      "price": 100,
+      "image": "",
+      "available": true,
+      "sort": 45
+    },
+    {
+      "id": "id_msqpb8zdqtccgz",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "مناقيش",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 46
+    },
+    {
+      "id": "id_msqpb8zdpz16ce",
+      "categoryId": "id_msqpb8zdv766p0",
+      "name": "قهوة",
+      "desc": "",
+      "price": 120,
+      "image": "",
+      "available": true,
+      "sort": 47
+    },
+    {
+      "id": "id_msqpb8zdand8hl",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "كيوي",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 48
+    },
+    {
+      "id": "id_msqpb8zdxs8zjy",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "انناس",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 49
+    },
+    {
+      "id": "id_msqpb8zd3gvnm4",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "بطيخ",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 50
+    },
+    {
+      "id": "id_msqpb8zdsokuqn",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "مانكا",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 51
+    },
+    {
+      "id": "id_msqpb8zd2nvn28",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "لوبيري",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 52
+    },
+    {
+      "id": "id_msqpb8zd728420",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "نعناع وليمون",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 53
+    },
+    {
+      "id": "id_msqpb8zdy0r3eg",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "فواكه استوائية",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 54
+    },
+    {
+      "id": "id_msqpb8zdiwhw3e",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "باشن فروت",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 55
+    },
+    {
+      "id": "id_msqpb8zdt7eolp",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "جبس",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 56
+    },
+    {
+      "id": "id_msqpb8zd6xnwtm",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "بلو هاواي",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 57
+    },
+    {
+      "id": "id_msqpb8zdsigee6",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "فريز",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 58
+    },
+    {
+      "id": "id_msqpb8zdfwv29g",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "رمان",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 59
+    },
+    {
+      "id": "id_msqpb8zdk59ysy",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "علاقيات",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 60
+    },
+    {
+      "id": "id_msqpb8zdkxzniu",
+      "categoryId": "id_msqpb8zdz0wps2",
+      "name": "دراكن و منكا",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 61
+    },
+    {
+      "id": "id_msqpb8zd16gbb5",
+      "categoryId": "id_msqpb8zdpc7ywp",
+      "name": "نوتيلا",
+      "desc": "",
+      "price": 350,
+      "image": "",
+      "available": true,
+      "sort": 62
+    },
+    {
+      "id": "id_msqpb8zdr8i96z",
+      "categoryId": "id_msqpb8zdpc7ywp",
+      "name": "بوزا",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 63
+    },
+    {
+      "id": "id_msqpb8zd092i54",
+      "categoryId": "id_msqpb8zdpc7ywp",
+      "name": "قشطه",
+      "desc": "",
+      "price": 250,
+      "image": "",
+      "available": true,
+      "sort": 64
+    },
+    {
+      "id": "id_msqpb8zd1ou3qw",
+      "categoryId": "id_msqpb8zdpc7ywp",
+      "name": "مكسرات",
+      "desc": "",
+      "price": 750,
+      "image": "",
+      "available": true,
+      "sort": 65
+    },
+    {
+      "id": "id_msqpb8zdggac8k",
+      "categoryId": "id_msqpb8zdpc7ywp",
+      "name": "موز بال نيونتلا مع المكسرات",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 66
+    },
+    {
+      "id": "id_msqpb8zdxj7ve0",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "ايس لا تيه",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 67
+    },
+    {
+      "id": "id_msqpb8zdadtle8",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "ايس امريكانو",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 68
+    },
+    {
+      "id": "id_msqpb8zd6h4ql6",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "ايس بانيشش لا تيه",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 69
+    },
+    {
+      "id": "id_msqpb8zd61lqnj",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "ايس كافيه بالفراوله",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 70
+    },
+    {
+      "id": "id_msqpb8zd1zgmsz",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "كارميل ميكاتو",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 71
+    },
+    {
+      "id": "id_msqpb8zd313eke",
+      "categoryId": "id_msqpb8zd9lkp27",
+      "name": "ايس كافيه بالفراوله",
+      "desc": "",
+      "price": 200,
+      "image": "",
+      "available": true,
+      "sort": 72
     }
   ]
 }
