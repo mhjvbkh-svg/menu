@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم | إدارة المنيو</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- ====== شاشة تسجيل الدخول ====== -->
+  <div class="login-wrap" id="loginView">
+    <div class="login-card">
+      <div class="login-logo">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h19"/><path d="M11.25 22a.75.75 0 0 0 .75-.75V3.75a.75.75 0 0 0-1.5 0v17.5c0 .414.336.75.75.75z"/><path d="M21 11V7.5a2.5 2.5 0 0 0-2.5-2.5H13"/></svg>
+      </div>
+      <h1>لوحة تحكم المنيو</h1>
+      <p>أدخل كلمة المرور للوصول إلى الإدارة</p>
+      <div class="login-error" id="loginError">كلمة المرور غير صحيحة</div>
+      <form id="loginForm">
+        <div class="field">
+          <label>كلمة المرور</label>
+          <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول</button>
+      </form>
+      <p style="margin-top:18px;font-size:.8rem">كلمة المرور الافتراضية: <code style="background:#f1f3f7;border-radius:6px;padding:1px 8px">admin123</code></p>
+    </div>
+  </div>
+
+  <!-- ====== الواجهة الرئيسية ====== -->
+  <div class="layout" id="appView" style="display:none">
+
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar">
+      <div class="side-brand">
+        <img class="side-logo" id="sideLogo" src="" alt="" />
+        <div>
+          <b id="sideName">المطعم</b>
+          <small>لوحة التحكم</small>
+        </div>
+      </div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-page="dash">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          <span>لوحة المعلومات</span>
+        </button>
+        <button class="nav-item" data-page="cats">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/></svg>
+          <span>الأقسام</span>
+        </button>
+        <button class="nav-item" data-page="items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+          <span>الأصناف</span>
+        </button>
+        <button class="nav-item" data-page="excel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m8 13 8 8"/><path d="m16 13-8 8"/></svg>
+          <span>ملف Excel</span>
+        </button>
+        <button class="nav-item" data-page="settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>الإعدادات</span>
+        </button>
+      </nav>
+      <div class="side-foot">
+        <a href="../index.html">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v6h6"/><path d="M12 12 3 3"/></svg>
+          <span>عرض المنيو</span>
+        </a>
+        <button id="logoutBtn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+          <span>تسجيل الخروج</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- المحتوى -->
+    <main class="main">
+
+      <!-- لوحة المعلومات -->
+      <section class="page" id="page-dash">
+        <div class="page-head">
+          <h1>لوحة المعلومات</h1>
+          <p>نظرة سريعة على المنيو الخاص بك</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-icon gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
+            </div>
+            <div>
+              <div class="stat-value" id="statCats">0</div>
+              <div class="stat-label">عدد الأقسام</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+            </div>
+            <div>
+              <div class="stat-value" id="statItems">0</div>
+              <div class="stat-label">إجمالي الأصناف</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon ok">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <div class="stat-value" id="statAvail">0</div>
+              <div class="stat-label">متوفر الآن</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon red">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </div>
+            <div>
+              <div class="stat-value" id="statOff">0</div>
+              <div class="stat-label">غير متوفر</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 style="margin-bottom:14px">أسرع الروابط</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <button class="btn btn-primary" onclick="goTo('items')">إضافة صنف جديد</button>
+            <button class="btn btn-ghost" onclick="goTo('cats')">إدارة الأقسام</button>
+            <button class="btn btn-ghost" onclick="goTo('excel')">استيراد من Excel</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- الأقسام -->
+      <section class="page" id="page-cats" style="display:none">
+        <div class="page-head">
+          <h1>الأقسام</h1>
+          <p>تنظيم أصناف المنيو في أقسام (مقبلات، رئيسية، مشروبات...)</p>
+        </div>
+        <div class="panel">
+          <div class="cat-list" id="catList"></div>
+          <div class="cat-add">
+            <input type="text" id="newCatName" placeholder="اسم القسم الجديد... (مثال: مشويات)" />
+            <button class="btn btn-primary" onclick="addCat()">إضافة القسم</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- الأصناف -->
+      <section class="page" id="page-items" style="display:none">
+        <div class="page-head">
+          <h1>الأصناف</h1>
+          <p>إضافة وتعديل وحذف أصناف المنيو</p>
+        </div>
+        <div class="panel">
+          <div class="table-tools">
+            <input type="search" id="itemSearch" placeholder="ابحث بالاسم..." />
+            <select id="itemFilter"><option value="">كل الأقسام</option></select>
+            <div class="spacer"></div>
+            <button class="btn btn-primary" onclick="openItemModal()">+ إضافة صنف</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>الاسم</th>
+                  <th>القسم</th>
+                  <th>السعر</th>
+                  <th>الحالة</th>
+                  <th>إجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="itemsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ملف Excel -->
+      <section class="page" id="page-excel" style="display:none">
+        <div class="page-head">
+          <h1>ملف Excel</h1>
+          <p>استخدم ملف Excel كقاعدة بيانات: استورد بياناتك أو صدّرها أو حمّل نموذجاً جاهزاً</p>
+        </div>
+        <div class="excel-cards">
+          <div class="excel-card">
+            <div class="ic">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            </div>
+            <h3>استيراد من Excel</h3>
+            <p>اختر ملف Excel يحتوي على الأصناف. سيتم استبدال بيانات المنيو الحالية ببيانات الملف.</p>
+            <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display:none" />
+            <button class="btn btn-primary btn-block" onclick="document.getElementById('excelFileInput').click()">اختيار ملف Excel</button>
+          </div>
+          <div class="excel-card">
+            <div class="ic" style="background:#e8f0fe;color:#3b6fd4">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
+            </div>
+            <h3>تصدير إلى Excel</h3>
+            <p>يُنشئ ملف Excel بأحدث بيانات المنيو لديك (الأصناف + الأقسام).</p>
+            <button class="btn btn-ghost btn-block" onclick="DB.exportExcel();toast('تم تصدير الملف بنجاح','ok')">تصدير البيانات</button>
+          </div>
+          <div class="excel-card">
+            <div class="ic" style="background:#e7f7ef;color:var(--ok)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+            <h3>نموذج جاهز للتحميل</h3>
+            <p>ملف تجريبي يوضح الأعمدة المطلوبة لتعبئة بياناتك ثم استيرادها.</p>
+            <button class="btn btn-ghost btn-block" onclick="DB.downloadTemplate();toast('تم تحميل النموذج','ok')">تحميل النموذج</button>
+          </div>
+        </div>
+        <div class="excel-steps">
+          <h3>طريقة استخدام ملف Excel</h3>
+          <ol>
+            <li>حمّل <b>النموذج الجاهز</b> من الأعلى.</li>
+            <li>افتحه في Excel وعبّئ الأعمدة: <code>الاسم</code> <code>الوصف</code> <code>السعر</code> <code>القسم</code> <code>الصورة (رابط)</code> <code>متاح (نعم/لا)</code></li>
+            <li>احفظ الملف ثم اضغط <b>استيراد من Excel</b> واختر الملف.</li>
+            <li>سيتم إنشاء الأقسام تلقائياً من عمود "القسم" واستبدال المنيو الحالي بالكامل.</li>
+            <li>بعد الاستيراد، افتح <b>عرض المنيو</b> للتأكد من النتيجة.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- الإعدادات -->
+      <section class="page" id="page-settings" style="display:none">
+        <div class="page-head">
+          <h1>الإعدادات</h1>
+          <p>بيانات المطعم التي تظهر في صفحة المنيو</p>
+        </div>
+        <div class="panel" style="max-width:720px">
+          <div class="form-grid">
+            <div class="field">
+              <label>اسم المطعم</label>
+              <input type="text" id="setName" />
+            </div>
+            <div class="field">
+              <label>العملة</label>
+              <input type="text" id="setCurrency" placeholder="ر.س" />
+            </div>
+            <div class="field full">
+              <label>الشعار (جملة قصيرة)</label>
+              <input type="text" id="setSlogan" />
+            </div>
+            <div class="field">
+              <label>رقم الهاتف</label>
+              <input type="tel" id="setPhone" dir="ltr" style="text-align:left" />
+            </div>
+            <div class="field">
+              <label>العنوان</label>
+              <input type="text" id="setAddress" />
+            </div>
+            <div class="field full">
+              <label>شعار المطعم (صورة)</label>
+              <div class="img-preview-wrap">
+                <img class="img-preview" id="logoPreview" src="" alt="" />
+                <div class="upload-box">
+                  <label class="upload-label" for="logoFile">اضغط لاختيار صورة شعار المطعم</label>
+                  <input type="file" id="logoFile" accept="image/*" />
+                  <div style="display:flex;gap:8px;margin-top:8px">
+                    <input type="text" id="setLogoUrl" placeholder="أو الصق رابط صورة... (http...)" style="flex:1;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;outline:none;background:#fafbfc" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field full switch-row">
+              <input type="checkbox" id="showNotAvailable" />
+              <label for="showNotAvailable" style="margin:0;font-weight:700">إظهار الأصناف غير المتوفرة في المنيو (مع علامة "غير متوفر")</label>
+            </div>
+            <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-primary" onclick="saveSettings()">حفظ الإعدادات</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel" style="max-width:720px;margin-top:18px">
+          <h3 style="margin-bottom:4px">تغيير كلمة المرور</h3>
+          <p style="color:var(--muted);font-size:.86rem;margin-bottom:16px">كلمة مرور الدخول إلى لوحة التحكم</p>
+          <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field">
+              <label>كلمة المرور الجديدة</label>
+              <input type="password" id="newPass" autocomplete="new-password" />
+            </div>
+            <div class="field">
+              <label>تأكيد كلمة المرور</label>
+              <input type="password" id="confirmPass" autocomplete="new-password" />
+            </div>
+            <div class="field" style="display:flex;align-items:flex-end">
+              <button class="btn btn-ghost btn-block" onclick="changePassword()">تحديث</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ====== نافذة إضافة/تعديل صنف ====== -->
+  <div class="modal-backdrop" id="itemModalBackdrop">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="itemModalTitle">إضافة صنف</h3>
+        <button class="x" onclick="closeItemModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="itId" />
+        <div class="form-grid">
+          <div class="field">
+            <label>اسم الصنف *</label>
+            <input type="text" id="itName" placeholder="مثال: كباب لحم مشوي" />
+          </div>
+          <div class="field">
+            <label>السعر *</label>
+            <input type="number" id="itPrice" step="0.5" min="0" placeholder="55" />
+          </div>
+          <div class="field full">
+            <label>الوصف</label>
+            <textarea id="itDesc" placeholder="وصف مختصر للطبق مكوناته..."></textarea>
+          </div>
+          <div class="field">
+            <label>القسم</label>
+            <select id="itCategory"></select>
+          </div>
+          <div class="field">
+            <label>صورة الصنف</label>
+            <div class="img-preview-wrap">
+              <img class="img-preview" id="itPreview" src="" alt="" />
+              <div class="upload-box">
+                <label class="upload-label" for="itFile">رفع صورة من الجهاز</label>
+                <input type="file" id="itFile" accept="image/*" />
+                <input type="text" id="itImageUrl" placeholder="أو رابط صورة http... (اختياري)" style="width:100%;margin-top:8px;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;outline:none;background:#fafbfc" />
+              </div>
+            </div>
+          </div>
+          <div class="field switch-row" style="grid-column:1/-1">
+            <input type="checkbox" id="itAvailable" checked />
+            <label for="itAvailable" style="margin:0;font-weight:700">الصنف متوفر</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary" onclick="saveItem()">حفظ</button>
+        <button class="btn btn-ghost" onclick="closeItemModal()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة تأكيد -->
+  <div class="modal-backdrop" id="confirmBackdrop">
+    <div class="modal" style="width:min(420px,100%)">
+      <div class="modal-body">
+        <h3 id="confirmTitle" style="margin-bottom:8px">تأكيد الحذف</h3>
+        <p id="confirmText" style="color:var(--muted);font-size:.92rem">هل أنت متأكد؟</p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-danger" id="confirmOk">نعم، احذف</button>
+        <button class="btn btn-ghost" onclick="closeConfirm()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="libs/xlsx.full.min.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
